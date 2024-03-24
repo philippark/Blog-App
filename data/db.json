@@ -1,0 +1,16 @@
+{
+    "blogs": [
+        {
+            "title": "Magnus Vs Alireza",
+            "body": "huh?",
+            "author": "Daniel Naroditsky",
+            "id": 1
+        },
+        {
+            "title": "CHESS DRAMA!!!",
+            "body": "huh?",
+            "author": "GothamChess",
+            "id": 2
+        }
+    ]
+}
