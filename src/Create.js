@@ -4,8 +4,10 @@ const Create = () => {
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
     const [author, setAuthor] = useState("Gotham");
+    const [isPending, setIsPending] = useState(false);
 
     const handleSubmit = (e) => {
+        setIsPending(true);
         e.preventDefault();
         const blog = {title, body, author};
 
@@ -13,6 +15,8 @@ const Create = () => {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(blog)
+        }).then(()=>{
+            setIsPending(false)
         })
     }
 
@@ -45,7 +49,8 @@ const Create = () => {
                     <option value="Danya">Danya</option>
                     <option value="Botez">Botez</option>
                 </select>
-                <button>Add Blog</button>
+                {!isPending && <button>Add Blog</button>}
+                {isPending && <button disabled>Adding Blog...</button>}
 
             </form>
         </div>
